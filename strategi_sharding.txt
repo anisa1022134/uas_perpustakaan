@@ -1,0 +1,18 @@
+Strategi Sharding (Citus)
+
+1. users → di-shard berdasarkan user_id
+   - Karena setiap user unik dan berelasi ke borrow_records
+
+2. books → di-shard berdasarkan book_id
+   - Cocok untuk distribusi buku independen
+
+3. borrow_records → di-shard berdasarkan user_id
+   - Untuk efisiensi join dengan tabel users
+   - Memungkinkan partisi data berdasarkan aktivitas pengguna
+
+Perintah utama:
+- create_distributed_table('nama_tabel', 'kolom_shard')
+
+Distribusi node dilakukan menggunakan:
+- master_add_node('worker1', 5432)
+- master_add_node('worker2', 5432)

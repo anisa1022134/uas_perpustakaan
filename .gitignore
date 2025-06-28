@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.env
+*.sqlite3
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and dumps
+*.log
+
+# Docker
+*.pid
+*.sock
+
+# Output
+*.out
+*.bak
+
+# Document backups
+~$*
